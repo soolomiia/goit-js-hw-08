@@ -21,13 +21,13 @@ function galleryCreate(items) {
     )
     .join("");
 }
-
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionsDelay: 250,
+});
 function imageClick(event) {
   event.preventDefault();
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionsDelay: 250,
-  });
+  
   if (event.target.nodeName !== "IMG") {
     return;
   }
